@@ -27,9 +27,7 @@ public int search(int[] nums, int target) {
         }
         else trail=middle-1;
     }
-    if(head==trail)
-        if(target==nums[head])
-            index=head;
+
     return index;
 }}
 
