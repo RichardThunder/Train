@@ -11,7 +11,7 @@ package com.company;
 
  */
 
-public class Solution extends VersionControl {
+public class firstBadVersion extends VersionControl {
 public int firstBadVersion(int n) {
     int head=1;
     int trail=n;
