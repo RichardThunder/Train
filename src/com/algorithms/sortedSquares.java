@@ -1,6 +1,4 @@
-package com.company;
-
-import java.util.ArrayList;
+package com.algorithms;
 
 public class sortedSquares {
 

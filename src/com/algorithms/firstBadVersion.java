@@ -1,4 +1,4 @@
-package com.company;
+package com.algorithms;
 
 /* The isBadVersion API is defined in the parent class VersionControl.
       boolean isBadVersion(int version);
@@ -13,24 +13,24 @@ package com.company;
 
 public class firstBadVersion extends VersionControl {
 public int firstBadVersion(int n) {
-    int head=1;
-    int trail=n;
-    int bad=0;
-    if(!isBadVersion(n))
+    int head = 1;
+    int trail = n;
+    int bad = 0;
+    if (!isBadVersion(n))
         return bad;
 
-    while(head<=trail){
-        int middle=head+(trail-head)/2;//大整数出现溢出
+    while (head <= trail) {
+        int middle = head + (trail - head) / 2;//大整数出现溢出
         // if(isBadVersion(middle)&&!isBadVersion(middle-1)){//符合第一个错误的条件
         //     bad=middle;
         //     break;
         // }
-        if(!isBadVersion(middle)){//向后查找
-            head=middle+1;
+        if (!isBadVersion(middle)) {//向后查找
+            head = middle + 1;
 
         }
-        else{//向前查找
-        trail=middle;
+        else {//向前查找
+            trail = middle;
         }
     }
     return bad;

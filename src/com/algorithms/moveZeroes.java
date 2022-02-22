@@ -1,4 +1,4 @@
-package com.company;
+package com.algorithms;
 
 public class moveZeroes {
 
@@ -50,17 +50,17 @@ public class moveZeroes {
 
 public void moveZeroes(int[] nums) {//查找非0数字 找到后放到第n个位置,最后把尾部置为0
     int length = nums.length;
-    int n=0;
+    int n = 0;
 
-   for(int i=0;i<length;i++){
-       if(nums[i]!=0){
-           nums[n]=nums[i];
-           n++;
-       }
-   }
-   for(int i=n;i<length;i++){
-       nums[i]=0;
-   }
+    for (int i = 0; i < length; i++) {
+        if (nums[i] != 0) {
+            nums[n] = nums[i];
+            n++;
+        }
+    }
+    for (int i = n; i < length; i++) {
+        nums[i] = 0;
+    }
 }
 
 }
