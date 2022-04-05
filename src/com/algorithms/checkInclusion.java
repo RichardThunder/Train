@@ -45,7 +45,7 @@ public class checkInclusion {
 // 通过测试用例：
 //         107 / 107
 // }
-
+/*
 public boolean checkInclusion(String s1, String s2) {
     int n1 = s1.length(), n2 = s2.length();
     int[] map1=new int[128];
@@ -77,8 +77,76 @@ public boolean checkInclusion(String s1, String s2) {
 
 
 
+}*/
+
+public boolean checkInclusion(String s1, String s2) {
+    if (s1.length() > s2.length())
+        return false;
+    Map<Character, Integer> needed = new HashMap<Character, Integer>();
+    Map<Character, Integer> window = new HashMap<Character, Integer>();
+    int left = 0, right = 0, valid = 0;
+    for (int i = 0; i < s1.length(); i++) {
+        needed.put(s1.charAt(i), needed.getOrDefault(s1.charAt(i), 0) + 1);
+    }
+    //窗口不断右移，直到包含的数目与needed中相同
+    //收缩左边，直到大小与s1相同
+    //移动窗口
+    while(right < s2.length()){
+        char r=s2.charAt(right);
+        right++;
+
+        if(needed.containsKey(r)){
+            window.put(r,window.getOrDefault(r,0)+1);
+            if(needed.get(r).equals(window.get(r)))
+                valid++;
+
+        }
+        //window中的字符满足需要此时收缩左边
+        while(needed.size() == valid){
+            if(right-left==s1.length()){
+                return true;
+            }
+            char l=s2.charAt(left);
+            left++;
+            if(needed.containsKey(l)){
+                window.put(l, window.get(l)-1);
+                if(window.get(l)<needed.get(l))
+                    valid--;
+            }
+        }
+
+    }
+return false;
+}
+/*执行结果：
+通过
+
+执行用时：
+        22 ms
+, 在所有 Java 提交中击败了
+34.75%
+的用户
+内存消耗：
+        41.3 MB
+, 在所有 Java 提交中击败了
+33.53%
+的用户
+通过测试用例：
+        107 / 107*/
 }
 
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
