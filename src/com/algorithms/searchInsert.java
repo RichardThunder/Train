@@ -4,8 +4,7 @@ package com.algorithms;
 //         请必须使用时间复杂度为 O(log n) 的算法。
 
 public class searchInsert {
-}
-class Solution {
+
 public int searchInsert(int[] nums, int target) {
     int head=0;
     int trail=nums.length-1;

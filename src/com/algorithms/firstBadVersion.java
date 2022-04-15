@@ -10,29 +10,29 @@ package com.algorithms;
 你可以通过调用 bool isBadVersion(version) 接口来判断版本号 version 是否在单元测试中出错。实现一个函数来查找第一个错误的版本。你应该尽量减少对调用 API 的次数。
 
  */
-
-public class firstBadVersion extends VersionControl {
-public int firstBadVersion(int n) {
-    int head = 1;
-    int trail = n;
-    int bad = 0;
-    if (!isBadVersion(n))
-        return bad;
-
-    while (head <= trail) {
-        int middle = head + (trail - head) / 2;//大整数出现溢出
-        // if(isBadVersion(middle)&&!isBadVersion(middle-1)){//符合第一个错误的条件
-        //     bad=middle;
-        //     break;
-        // }
-        if (!isBadVersion(middle)) {//向后查找
-            head = middle + 1;
-
-        }
-        else {//向前查找
-            trail = middle;
-        }
-    }
-    return bad;
-}
-}
+//
+// public class firstBadVersion extends VersionControl {
+// public int firstBadVersion(int n) {
+//     int head = 1;
+//     int trail = n;
+//     int bad = 0;
+//     if (!isBadVersion(n))
+//         return bad;
+//
+//     while (head <= trail) {
+//         int middle = head + (trail - head) / 2;//大整数出现溢出
+//         // if(isBadVersion(middle)&&!isBadVersion(middle-1)){//符合第一个错误的条件
+//         //     bad=middle;
+//         //     break;
+//         // }
+//         if (!isBadVersion(middle)) {//向后查找
+//             head = middle + 1;
+//
+//         }
+//         else {//向前查找
+//             trail = middle;
+//         }
+//     }
+//     return bad;
+// }
+// }
