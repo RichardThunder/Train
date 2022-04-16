@@ -1,4 +1,4 @@
-package com.BTS;
+package com.Tree;
 
 public class diameterOfBinaryTree {
 /*
